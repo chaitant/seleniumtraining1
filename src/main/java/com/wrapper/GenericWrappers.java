@@ -33,11 +33,11 @@ public class GenericWrappers extends ReportManager implements Wrappers{
     @Override
     public void invokeApp(String browser, String url) {
         if (browser.equalsIgnoreCase("Chrome")){
-            System.setProperty("webdriver.chrome.driver","C:\\dev\\Tools\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","./src/main/resources/chromedriver.exe");
             driver = new ChromeDriver();
          }
         else if (browser.equalsIgnoreCase("FireFox")){
-            System.setProperty("webdriver.gecko.driver","C:\\dev\\Tools\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver","../src/main/resources/geckodriver.exe");
             driver = new FirefoxDriver();
         }
         //
@@ -503,4 +503,11 @@ public class GenericWrappers extends ReportManager implements Wrappers{
         driver.quit();
 
     }
+
+    public static void main(String[] args) {
+        driver.findElementById("calcSearchTerm");
+        driver.findElementByName("calcSearchTerm");
+        driver.findElementByClassName("inlongest");
+    }
 }
+
